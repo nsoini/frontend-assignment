@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Todotable from "./components/Todotable";
 
 //kompomentti
 export default function Todolist(){
@@ -26,19 +27,9 @@ export default function Todolist(){
 
     }
 
-    const taskRows = todos.map((task, index) => 
-        <tr key={index}>
-            <td>{formatDate(task.date)}</td>
-            <td>{task.description}</td>
-            <td>
-            <button onClick={() => deleteTask(index)}>Delete</button>
-            </td>
-        </tr>)
-
     //return
     return (
         <>
-
             <h1>Todo List</h1>
             <p>Add a new task to your todo list</p>
             Date:
@@ -49,8 +40,6 @@ export default function Todolist(){
                 onChange={handleInputChange}
             />
             
-
-            
             Description:  
             <input 
                 type="text" 
@@ -59,17 +48,10 @@ export default function Todolist(){
                 onChange={handleInputChange}
             />
             
-        
             <button onClick={addTask}>
                 Add
             </button>
-        
-            <table>
-                <tbody>
-                    <tr><th>Date</th><th>Description</th></tr>
-                    {taskRows}
-                </tbody>
-            </table>
+            <Todotable todos ={todos} deleteTask={deleteTask} formatDate={formatDate}/>
 
         </>
     )
