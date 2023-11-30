@@ -2,6 +2,9 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 import { useRef } from "react";
+import { Button } from '@mui/material';
+
+
 
 export default function TodoGrid(props){
 
@@ -11,7 +14,8 @@ export default function TodoGrid(props){
         { field: "date", 
         sortable: true, 
         filter: true,
-        floatingFilter: true },
+        floatingFilter: true,
+        cellRenderer: (params) => props.formatDate(params.value)},
         { field: "description", 
         sortable: true, 
         filter: true,
@@ -36,7 +40,7 @@ export default function TodoGrid(props){
 
     return (
         <>
-        <button onClick={deleteSelected}>Delete</button>
+        <Button onClick={deleteSelected} variant="contained">Delete</Button>
         <div className="ag-theme-material" 
         style={{ height: '700px', width: '80%', margin: 'auto' }}>
           <AgGridReact 
