@@ -6,6 +6,7 @@ const taskRows = props.todos.map((task, index) =>
 <tr key={index}>
     <td>{props.formatDate(task.date)}</td>
     <td>{task.description}</td>
+    <td>{task.priority}</td>
     <td>
     <button onClick={() => props.deleteTask(index)}>Delete</button>
     </td>
@@ -15,7 +16,7 @@ return(
     <div>
         <table>
             <tbody>
-                <tr><th>Date</th><th>Description</th></tr>
+                <tr><th>Date</th><th>Description</th><th>Priority</th></tr>
                 {taskRows}
             </tbody>
         </table>
