@@ -35,7 +35,7 @@ export default function Todolist(){
     //return
     return (
         <>
-            <h1>Todo List</h1>
+            <h3>Todolist</h3>
             <p>Add a new task to your todo list</p>
             <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
             <DatePicker
