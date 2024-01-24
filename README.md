@@ -1,4 +1,7 @@
-# React + Vite
+# Todo -list app
+Haaga-Helia Front end -development course work.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
